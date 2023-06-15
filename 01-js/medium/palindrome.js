@@ -7,7 +7,16 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  // Convert the string to lowercase for case insensitivity
+  str = str.toLowerCase();
+
+  // Remove non-alphanumeric characters from the string
+  str = str.replace(/[^a-z0-9]/g, "");
+
+  // Check if the reversed string is equal to the original string
+  return str === str.split("").reverse().join("");
 }
 
+var ans = isPalindrome("Able, was I ere I saw Elba!");
+console.log(ans);
 module.exports = isPalindrome;
